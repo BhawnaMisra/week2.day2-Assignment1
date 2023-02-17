@@ -1,0 +1,52 @@
+package week2.day2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import java.time.Duration;
+
+public class FaceBook {
+	
+	public static void main(String[] args) {
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com//");
+	
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Create new')]")).click();
+		
+		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Bhawna");
+		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Misra");
+		driver.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("4012194011");
+		driver.findElement(By.xpath("//input[@id='password_step_input']")).sendKeys("Abc@123");
+		
+		
+		
+		
+		//driver.findElement(By.xpath("//select[@id='month']")).click();
+	
+		WebElement monthdropdown = driver.findElement(By.xpath("//select[@id='month']"));
+		Select dd1=new Select(monthdropdown);
+		dd1.selectByVisibleText("Nov");
+		
+		WebElement daydropdown = driver.findElement(By.xpath("//select[@id='day']"));
+		Select dd2=new Select(daydropdown);
+		dd2.selectByVisibleText("25");
+		
+		WebElement yeardropdown = driver.findElement(By.xpath("//select[@id='year']"));
+		Select dd3=new Select(yeardropdown);
+		dd3.selectByVisibleText("1982");
+		
+		driver.findElement(By.xpath("//label[text()='Female']")).click();
+					
+		
+		
+		driver.manage().window().maximize();
+	
+	
+
+}
+}
+
