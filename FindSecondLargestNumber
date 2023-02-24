@@ -1,0 +1,21 @@
+package week2.day2;
+
+import java.util.Arrays;
+
+public class FindSecondLargestNumber {
+	public static void main(String[] args) {
+		int[] data = { 3,2,11,4,6,7};
+		
+		
+		//1) Arrange the array in ascending order
+		Arrays.sort(data);
+		
+		// 2) Pick the 2nd element from the last and print i
+		System.out.println("The Second Largest Number is:" + data[data.length-2]);
+		
+		
+	}
+	
+	
+
+}
